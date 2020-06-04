@@ -1,0 +1,10 @@
+
+		<%= form_tag login_path do %>  
+			
+  				<%= text_field_tag(:username_or_email,"", class: "form-control", id: "exampleInputEmail1", placeholder: "Email ID/Username", required: "true" )%>
+  			
+     			<%= password_field_tag :password ,"", class: "form-control",id: "exampleInputPassword1", placeholder: "Password", required: "true" %> 
+ 		
+  				<%= submit_tag "Login",class: "btn btn-primary btn-lg btn-block" %>
+ 			 
+		<% end %>

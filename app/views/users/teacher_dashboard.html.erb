@@ -1,0 +1,38 @@
+YOUR NAME: <%= @user.name%><br>
+SUBJECT: <%= @subject.subject_name%><br>
+
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Subject</th>
+      <th>Mark</th>
+     <!--  <th>Password digest</th> -->
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.student.name %></td>
+        <td><%= report.subject.subject_name %></td>
+
+       <!--  <td><!%= user.password_digest %></td> -->
+        <!-- <td><!%= link_to 'Show', user %></td>
+        
+        <td><!%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+        <%if report.mark == nil %>
+        <td>0</td>
+        <%else%>
+        <td><%=report.mark%></td>
+        <%end%>
+
+        <td><%= link_to 'Edit', edit_report_path(report) %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
