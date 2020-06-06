@@ -1,39 +1,63 @@
 <%= form_with(model: subject, local: true) do |form| %>
-  <% if subject.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
-
-      <ul>
-      <% subject.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+   <div class="row">
+  <div class="col-md-6">
+  <div class="form-group">
 
   <div class="field">
-    <%= form.label :subject_name %>
-    <%= form.text_field :subject_name, id: :subject_subject_name %>
+    <%= form.label :subject_name, class: "control-label"  %>
+    <%= form.text_field :subject_name, id: :subject_subject_name, class: "form-control", placeholder: "Sub-Name" %>
   </div>
+</div>
+</div>
+</div>
 
+<div class="row">
+  <div class="col-md-6">
+  <div class="form-group">
   <div class="field">
-    <%= form.label :subject_code %>
-    <%= form.text_field :subject_code, id: :subject_subject_code %>
+    <%= form.label :subject_code, class: "control-label"  %>
+    <%= form.text_field :subject_code, id: :subject_subject_code, class: "form-control", placeholder: "Sub-Code"  %>
   </div>
+</div>
+</div>
+</div>
+<!--   <div class="field">
+    <!%= form.label :is_finished %>
+    <!%= form.check_box :is_finished, id: :subject_is_finished %>
+  </div> -->
+
+  <div class="row">
+  <div class="col-md-6">
+  <div class="form-group">
 
   <div class="field">
-    <%= form.label :is_finished %>
-    <%= form.check_box :is_finished, id: :subject_is_finished %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :user_id, class: "control-label"  %>
 <!--     <!%= form.text_field :user_id, id: :subject_user_id %> -->
    <!--  <!%= select_tag "user_id" ,options_from_collection_for_select(User.where(role: '2') , "id", "name"), id: "job_card_service_incharge", class: "form-control  customer_select", include_blank: "select" %> -->
-    <%= form.collection_select :user_id, User.where(role: '2'),:id,:name, include_blank: true %>
+    <%= form.collection_select :user_id, User.where(role: '2'), :id, :name, {prompt: "Select a Teacher"}, {class: "form-control vehicle_type"} %>
   </div>
+</div>
+</div>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
+  
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10 save-btn ">
+        <%= link_to 'Back', subjects_path, class: "btn btn-primary submit sub_button" %>
+        <%= button_tag(type: "submit", class: "btn btn-success 
+         submit sub_button") do %>
+        Save
+        <% end %>
+      </div>
+    </div>
+
+
+<!--   <div class="actions">
+    <!%= form.submit %>
   </div>
+ -->
+
+
+
 <% end %>

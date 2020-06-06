@@ -1,10 +1,61 @@
 
-		<%= form_tag login_path do %>  
+	<!-- 	<!%= form_tag login_path do %>  
 			
-  				<%= text_field_tag(:username_or_email,"", class: "form-control", id: "exampleInputEmail1", placeholder: "Email ID/Username", required: "true" )%>
+  				<!%= text_field_tag(:username_or_email,"", class: "form-control", id: "exampleInputEmail1", placeholder: "Email ID/Username", required: "true" )%>
   			
-     			<%= password_field_tag :password ,"", class: "form-control",id: "exampleInputPassword1", placeholder: "Password", required: "true" %> 
+     			<!%= password_field_tag :password ,"", class: "form-control",id: "exampleInputPassword1", placeholder: "Password", required: "true" %> 
  		
-  				<%= submit_tag "Login",class: "btn btn-primary btn-lg btn-block" %>
+  				<!%= submit_tag "Login",class: "btn btn-primary btn-lg btn-block" %>
  			 
+		<!% end %> -->
+
+
+
+
+<script src="https://use.fontawesome.com/99347ac47f.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/login_style.css">
+<div class="login-page">
+	<div class="container">
+		<div class="login row">
+			<div class="col-md-12">
+				<div class="logo">
+				<!-- 	 <!%=image_tag "/assets/best-taxi-app-vd01.png", alt: "wheelspin", class: "img-responsive"%> -->
+				<!-- <img src="/assets/best-taxi-app-vd01.png" class="img-responsive" alt="Logo">  -->
+				<h2>Techaffinity</h2>
+				<br>
+				</div>
+		<%= form_tag login_path do %>  
+			<div class="form-group">
+  				<%= text_field_tag(:username_or_email,"", class: "form-control", id: "exampleInputEmail1", placeholder: "Email ID", required: "true" )%>
+  			</div>
+ 			 <div class="form-group"> 
+     			<%= password_field_tag :password ,"", class: "form-control",id: "exampleInputPassword1", placeholder: "Password", required: "true" %> 
+ 			 </div>
+ 			 <p id="alert"><%= alert %></p>
+ 			 <!-- <div><h4>message</h4</div> -->
+  				<%= submit_tag "Login",class: "btn btn-primary btn-lg btn-block" %>
+ 			 <div class="forgot-pass">
+    		<!-- 	<!%= link_to  "Forgot Password" , "password_forgot_path"%> -->
+ 			</div>
 		<% end %>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<style type="text/css">
+	#alert {
+    background: white;
+    color: red;
+    font-size: 13px;
+}
+</style>
+
+<script type="text/javascript">
+	$('#alert').show(0).delay(2000).hide(0);
+	$('#alert').hide(0).delay(2000).hide(0);
+</script>
+

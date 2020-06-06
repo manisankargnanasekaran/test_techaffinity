@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>Teacher's  <%= link_to 'New Teacher', new_user_path, class: "btn btn-success pull-right" %>
+</h1>
 
-<table>
+<table id="customer_index" class="table display table-hover table-striped display" cellspacing="0" width="100%">
   <thead>
     <tr>
       <th>Name</th>
@@ -34,4 +35,16 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#customer_index").dataTable({
+   "scrollY": "50vh",
+        "scrollX": true,
+    columnDefs: [
+]
+  });
+});
+
+
+    </script>

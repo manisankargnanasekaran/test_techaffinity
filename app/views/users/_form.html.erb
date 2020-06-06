@@ -1,37 +1,57 @@
 <%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="row">
+  <div class="col-md-6">
+      <div class="form-group">
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :user_name %>
+    <%= form.label :name, class: "control-label" %>
+    <%= form.text_field :name, id: :user_name, class: "form-control", placeholder: "Teacher Name" %>
   </div>
+</div>
+</div>
+</div>
 
+<div class="row">
+  <div class="col-md-6">
+      <div class="form-group">
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
+    <%= form.label :email,  class: "control-label" %>
+    <%= form.text_field :email, id: :user_email, class: "form-control", placeholder: "EmailId" %>
   </div>
+  </div>
+</div>
+</div>
 
+
+ <div class="row">
+  <div class="col-md-6">
+      <div class="form-group">
   <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password_digest, id: :user_password_digest %>
+
+    <%= form.label :password, class: "control-label" %>
+    <%= form.password_field :password_digest, id: :user_password_digest, class: "form-control", placeholder: "Password" %>
   </div>
+</div>
+</div>
+</div>
 
  <!--  <div class="field">
     <!%= form.label :role %>
     <!%= form.text_field :role, id: :user_role %>
   </div>
  -->
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
+  <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10 save-btn ">
+        <%= link_to 'Back', users_path, class: "btn btn-primary submit sub_button" %>
+        <%= button_tag(type: "submit", class: "btn btn-success 
+         submit sub_button") do %>
+        Save
+        <% end %>
+      </div>
+    </div>
+
+  <!-- <div class="actions">
+    <!%= form.submit %>
+  </div> -->
 <% end %>

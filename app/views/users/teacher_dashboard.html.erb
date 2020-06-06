@@ -1,9 +1,16 @@
-YOUR NAME: <%= @user.name%><br>
-SUBJECT: <%= @subject.subject_name%><br>
+<div class="row">
+<div class="col-md-6">
+
+<h6><lable>YOUR NAME:</lable> <%= @user.name%></h6>
+</div>
+<div class="col-md-6">
+<h6><lable>SUBJECT:</lable> <%= @subject.subject_name%></h6>
+</div>
+</div>
 
 <h1>Users</h1>
 
-<table>
+<table id="customer_index" class="table display table-hover table-striped display" cellspacing="0" width="100%">
   <thead>
     <tr>
       <th>Name</th>
@@ -36,3 +43,8 @@ SUBJECT: <%= @subject.subject_name%><br>
     <% end %>
   </tbody>
 </table>
+<style type="text/css">
+  h6{
+   color :#ce1212
+  }
+</style>

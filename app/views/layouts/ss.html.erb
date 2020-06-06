@@ -1,0 +1,221 @@
+<nav id="sidebar">
+      <div class="sidebar-header">
+        <img src="/assets/best-taxi-app-vd01.png" class="img-responsive" alt="Logo"> 
+      </div>  
+
+      <div class="list-group panel">
+          
+         
+         <%if current_user.role_id==1 %>
+          <a href="<%=users_dashboard_path%>" class="list-group-item collapsed <%= 'active' if current_page?(users_dashboard_path)%> " data-parent="#sidebar" data-toggle="tooltip" data-placement="right" title="Dashboard"><i class="fa fa-home " aria-hidden="true"></i>
+            <span class="hidden-sm-down">Dashboard</span></a>
+          <%end%>
+           <a href="<%=rides_path%>" class="list-group-item collapsed <%= 'active' if current_page?(rides_path) %>" data-parent="#sidebar" data-toggle="tooltip" data-placement="right" title="Rides"><i class="fa fa-road" aria-hidden="true"></i>
+ <span class="hidden-sm-down"> Rides</span></a>
+
+           <a href="<%=ride_assign_path%>" class="list-group-item collapsed <%= 'active' if current_page?(ride_assign_path) %>" data-parent="#sidebar" data-toggle="tooltip" data-placement="right" title="Assign Rides"><i class="fa fa-car"></i> <span class="hidden-sm-down">Assign Rides</span></a>
+
+           <a href="<%=ride_logs_path%>" class="list-group-item collapsed <%= 'active' if current_page?(ride_logs_path) %>" data-parent="#sidebar" data-toggle="tooltip" data-placement="right" title="Ride Logs"><i class="fa fa-file"></i> <span class="hidden-sm-down"> Ride Logs</span></a>
+
+          <a href="<%=vehiclelogs_path%>" class="list-group-item collapsed <%= 'active' if current_page?(vehiclelogs_path) %>" data-parent="#sidebar" data-toggle="tooltip" data-placement="right" title="Ride Logs"><i class="fa fa-list-ol" aria-hidden="true"></i>
+ <span class="hidden-sm-down"> Vehicle Logs</span></a>
+
+         
+          <%if current_user.role_id==1 %>
+        <a href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false" data-toggle="tooltip" data-placement="right" title="Admin"><i class="fa fa-user-o"></i>  <span class="hidden-sm-down">Admin</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <div class="collapse" id="menu1">
+          <a href="<%=roles_path%>" class="list-group-item" data-parent="#menu1" data-toggle="tooltip" data-placement="right" title="Roles"><i class="fa fa-server" aria-hidden="true"></i><span>Roles</span></a>
+          <a href="<%=users_path%>" class="list-group-item" data-parent="#menu1" data-toggle="tooltip" data-placement="right" title="Users"><i class="fa fa-user-o" aria-hidden="true"></i><span>Users</span></a>
+
+          <a href="<%=time_logs_path%>" class="list-group-item" data-parent="#menu1" data-toggle="tooltip" data-placement="right" title="Users"><i class="fa fa-user-o" aria-hidden="true"></i><span>Time Logs</span></a>
+         <!--  <a href="#" class="list-group-item" data-parent="#menu1">Sevices</a>
+          <a href="#" class="list-group-item" data-parent="#menu1">Tasks</a> -->
+        </div>
+        <%end%>
+
+        <a href="#menu2" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false" data-toggle="tooltip" data-placement="right" title="Masters"><i class="fa fa-shopping-bag"></i>   <span class="hidden-sm-down">Masters</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <div class="collapse" id="menu2">
+          <a href="<%=drivers_path%>" class="list-group-item" data-parent="#menu2" data-toggle="tooltip" data-placement="right" title="Drivers"><i class="fa fa-id-card" aria-hidden="true"></i><span>Drivers</span></a>
+          <a href="<%=vehicles_path%>" class="list-group-item" data-parent="#menu2" data-toggle="tooltip" data-placement="right" title="Vehicles"><i class="fa fa-car" aria-hidden="true"></i><span>Vehicles</span></a>
+          <a href="<%=customers_path%>" class="list-group-item" data-parent="#menu2" data-toggle="tooltip" data-placement="right" title="Customers"> <i class="fa fa-users" aria-hidden="true"></i><span>Customers</span></a>
+          <a href="<%=typeofvehicles_path%>" class="list-group-item" data-parent="#menu2" data-toggle="tooltip" data-placement="right" title="Vehicle Type"> <i class="fa fa-asterisk" aria-hidden="true"></i><span>Vehicles Type </span></a>
+          <a href="<%=rate_card_path%>" class="list-group-item collapsed" data-parent="#sidebar" data-toggle="tooltip" data-placement="right" title="Rate card"><i class="fa fa-money" aria-hidden="true"></i>
+           <span class="hidden-sm-down"> Rate Card</span></a>
+<!--           <a href="<!%=rid_asign_path%>" class="list-group-item" data-parent="#menu2">Asign Ride</a>
+ -->        </div>
+
+<%if current_user.role_id==1 %>
+          <a href="#menu3" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false" data-toggle="tooltip" data-placement="right" title="Packages"><i class="fa fa-arrows-alt"></i>   <span class="hidden-sm-down">Packages</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <div class="collapse" id="menu3">
+
+
+          <a href="<%=day_rent_charges_path%>" class="list-group-item" data-parent="#menu2" data-toggle="tooltip" data-placement="right" title="Day Packages"> <i class="fa fa-sun-o" aria-hidden="true"></i><span>Day Packages</span></a>
+          <a href="<%=km_packages_path%>" class="list-group-item" data-parent="#menu2" data-toggle="tooltip" data-placement="right" title="Km Packages"><i class="fa fa-compass" aria-hidden="true"></i><span>Km Packages</span></a>
+          <a href="<%=hours_packages_path%>" class="list-group-item" data-parent="#menu2" data-toggle="tooltip" data-placement="right" title="Hours Packages"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Hours Packages<span></a>
+          <!-- <a href="<!%=hours_packages_path%>" class="list-group-item" data-parent="#menu2"  data-toggle="tooltip" data-placement="right" title="Rate Cards"><i class="fa fa-credit-card" aria-hidden="true"></i><span>Rate Card</span></a> -->
+          
+<!--           <a href="<!%=rid_asign_path%>" class="list-group-item" data-parent="#menu2">Asign Ride</a>
+ -->        </div>
+        
+    <%end%>
+
+
+<%if current_user.role_id==1 %>
+          <a href="#menu4" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false" data-toggle="tooltip" data-placement="right" title="Packages"> <i class="fa fa-flag" aria-hidden="true"></i>   <span class="hidden-sm-down">Reports</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+         
+
+        <div class="collapse" id="menu4">
+         <a href="<%=reports_ride_report_path%>" class="list-group-item collapsed" data-parent="#sidebar" data-toggle="tooltip" data-placement="right" title="Rate card"><i class="fa fa-file-o" aria-hidden="true"></i> <span class="hidden-sm-down"> Ride Report</span></a>
+
+          <a href="<%=reports_vehiclelog_path%>" class="list-group-item" data-parent="#menu2" data-toggle="tooltip" data-placement="right" title="Day Packages"> <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+<span>Vehicle Log Report</span></a>
+         
+      </div>
+        
+    <%end%>
+
+      </div>
+    </nav>
+    </div>
+
+<style type="text/css">
+  
+  .list-group-item.active {
+   
+    background-color: #00aeef !important;
+</style>
+<script type="text/javascript">
+
+    // nav-toggle
+
+    $('#sidebarCollapse').on('click', function (e) {
+        $('.page').toggleClass('active');
+    });
+
+      $('#sidebarCollapse').on('click', function() {
+        $('#sidebar').toggleClass('active');
+      });
+
+
+//collapse
+      $(document).ready(function () {
+        $('.collapse_tbl[aria-controls="collapseExample1"]').click(function (){
+            $('.collapse_tbl[aria-controls="collapseExample1"] i').toggleClass("fa-plus-circle fa-minus-circle");
+        });        
+        $('.collapse_tbl[aria-controls="collapseExample2"]').click(function (){
+            $('.collapse_tbl[aria-controls="collapseExample2"] i').toggleClass("fa-minus-circle fa-plus-circle");
+        });
+      });
+
+//Scroll
+
+      $(document).ready(function () {
+        $('.notification_scroll').slimScroll({});
+      });
+
+
+//Notifications
+
+      $(document).ready(function () {
+        $('#noti_Button').click(function (){
+            $('#notifications2').hide();
+
+            // CHECK IF NOTIFICATION COUNTER IS HIDDEN.
+            if ($('#noti_Counter2').is(':hidden')) {
+                // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                $('#noti_Button2').css('color', '#2e60ad');
+            }          
+        });
+        $('#noti_Button2').click(function (){
+            $('#notifications').hide();
+
+            // CHECK IF NOTIFICATION COUNTER IS HIDDEN.
+            if ($('#noti_Counter').is(':hidden')) {
+                // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                $('#noti_Button').css('color', '#2e60ad');
+            }          
+        });        
+      });
+
+    $(document).ready(function () {
+
+        // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
+        $('#noti_Counter')
+            .css({ opacity: 0 })
+            .text('3')              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+            .css({ top: '-10px' })
+            .animate({ top: '-2px', opacity: 1 }, 500);
+
+        $('#noti_Button').click(function () {
+
+            // TOGGLE (SHOW OR HIDE) NOTIFICATION WINDOW.
+            $('#notifications').fadeToggle('fast', 'linear', function () {
+                if ($('#notifications').is(':hidden')) {
+                    $('#noti_Button').css('color', '#2e60ad');
+                }
+                else $('#noti_Button').css('color', '#fdc006');        // CHANGE BACKGROUND COLOR OF THE BUTTON.
+            });
+
+            $('#noti_Counter').fadeOut('slow');                 // HIDE THE COUNTER.
+
+            return false;
+        });
+
+        // HIDE NOTIFICATIONS WHEN CLICKED ANYWHERE ON THE PAGE.
+        $(document).click(function () {
+            $('#notifications').hide();
+
+            // CHECK IF NOTIFICATION COUNTER IS HIDDEN.
+            if ($('#noti_Counter').is(':hidden')) {
+                // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                $('#noti_Button').css('color', '#2e60ad');
+            }
+        });
+
+        $('#notifications').click(function () {
+            return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
+        });
+    });
+
+// Notifications2
+
+    $(document).ready(function () {
+
+        // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
+        $('#noti_Counter2')
+            .css({ opacity: 0 })
+            .text('99+')              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+            .css({ top: '-10px' })
+            .animate({ top: '-2px', opacity: 1 }, 500);
+
+        $('#noti_Button2').click(function () {
+
+            // TOGGLE (SHOW OR HIDE) NOTIFICATION WINDOW.
+            $('#notifications2').fadeToggle('fast', 'linear', function () {
+                if ($('#notifications2').is(':hidden')) {
+                    $('#noti_Button2').css('color', '#2e60ad');
+                }
+                else $('#noti_Button2').css('color', '#fdc006');        // CHANGE BACKGROUND COLOR OF THE BUTTON.
+            });
+
+            $('#noti_Counter2').fadeOut('slow');                 // HIDE THE COUNTER.
+
+            return false;
+        });
+
+        // HIDE NOTIFICATIONS WHEN CLICKED ANYWHERE ON THE PAGE.
+        $(document).click(function () {
+            $('#notifications2,#notifications').hide();
+
+            // CHECK IF NOTIFICATION COUNTER IS HIDDEN.
+            if ($('#noti_Counter2,#noti_Counter').is(':hidden')) {
+                // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                $('#noti_Button2,#noti_Button').css('color', '#2e60ad');
+            }
+        });
+
+        $('#notifications2,#notifications').click(function () {
+            return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
+        });
+    });
+    </script>
