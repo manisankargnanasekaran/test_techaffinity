@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require datatables
-//= require bootstrap
 //= require turbolinks
 //= require_tree .
 //= require jquery3
@@ -21,4 +20,3 @@
 //= require rails-ujs
 //= require jquery-ui
 //= require turbolinks
-//= require selectize
